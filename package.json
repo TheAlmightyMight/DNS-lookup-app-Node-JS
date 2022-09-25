@@ -1,0 +1,25 @@
+{
+  "name": "dns-lookup-app-node-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon /server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheAlmightyMight/DNS-lookup-app-Node-JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheAlmightyMight/DNS-lookup-app-Node-JS/issues"
+  },
+  "homepage": "https://github.com/TheAlmightyMight/DNS-lookup-app-Node-JS#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.20"
+  }
+}
