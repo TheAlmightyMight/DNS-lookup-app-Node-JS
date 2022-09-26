@@ -17,28 +17,24 @@ app.get("/index.js", (req, res) => {
   res.sendFile(path.join(__dirname, "/client", "/index.js"));
 });
 
-app.get("/test", (req, res) => {
+app.get("/domain", (req, res) => {
   console.log(req.query);
-  if (req.query.value === "ip") {
-    console.log("ip");
-    res.send(req.query);
-  } else if (req.query.value === "domain") {
-    console.log("domain");
-    res.send(req.query);
-  } else {
-    res.send(req.query);
-  }
+  dns.resolve(req.query.domain, function (err, record) {
+    if (err) {
+      res.end("Could not resolve domain name");
+      return;
+    }
+    res.send(record);
+  });
 });
 
 app.get("/ip", (req, res) => {
   console.log(req.query);
   dns.reverse(req.query.ip, function (err, record) {
     if (err) {
-      res.end("Could'not resolve ip address");
+      res.end("Could not resolve ip address");
       return;
     }
-
-    console.log(record);
     res.send(record);
   });
 });
